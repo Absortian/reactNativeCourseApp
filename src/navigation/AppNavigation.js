@@ -3,13 +3,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-elements';
 // Stacks
 import { RestaurantStack } from './RestaurantStack';
+import { FavoritesStack } from './FavoritesStack';
+import { RankingStack } from './RankingStack';
+import { SearchStack } from './SearchStack';
+import { AccountStack } from './AccountStack';
 // Configs
 import { StacksConfig } from '../utils';
 // Componentes
-import { FavoritesScreen } from '../screens/FavoritesScreen';
-import { RankingScreen } from '../screens/RankingScreen';
-import { SearchScreen } from '../screens/SearchScreen';
-import { AccountScreen } from '../screens/AccountScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,16 +24,16 @@ export function AppNavigation(){
             <Tab.Screen name={StacksConfig.restaurant.tab} component={RestaurantStack} options={{
                 title: StacksConfig.restaurant.title
             }} />
-            <Tab.Screen name={StacksConfig.favorites.tab} component={FavoritesScreen} options={{
+            <Tab.Screen name={StacksConfig.favorites.tab} component={FavoritesStack} options={{
                 title: StacksConfig.favorites.title
             }}/>
-            <Tab.Screen name={StacksConfig.ranking.tab} component={RankingScreen} options={{
+            <Tab.Screen name={StacksConfig.ranking.tab} component={RankingStack} options={{
                 title: StacksConfig.ranking.title
             }}/>
-            <Tab.Screen name={StacksConfig.search.tab} component={SearchScreen} options={{
+            <Tab.Screen name={StacksConfig.search.tab} component={SearchStack} options={{
                 title: StacksConfig.search.title
             }}/>
-            <Tab.Screen name={StacksConfig.account.tab} component={AccountScreen} options={{
+            <Tab.Screen name={StacksConfig.account.tab} component={AccountStack} options={{
                 title: StacksConfig.account.title
             }}/>
         </Tab.Navigator>

@@ -32,6 +32,16 @@ const searchStack = {
 const accountStack = {
     tab: 'AccountTab',
     title: 'Cuenta',
+    screens: {
+        accountBase: {
+            tab: 'AccountBase',
+            title: 'Cuenta',
+        },
+        login: {
+            tab: 'LoginScreen',
+            title: 'Login',
+        },
+    }
 }
 export const StacksConfig = {
     // Restaurants

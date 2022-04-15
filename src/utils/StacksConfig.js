@@ -39,7 +39,7 @@ const accountStack = {
         },
         login: {
             tab: 'LoginScreen',
-            title: 'Login',
+            title: 'Iniciar Sesión',
         },
     }
 }

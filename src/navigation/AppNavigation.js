@@ -1,37 +1,40 @@
+// Dependencias
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-elements';
-import { ScreenConfig } from '../utils';
-import { RestaurantsScreen } from '../screens/Restaurants/RestaurantsScreen';
+// Stacks
+import { RestaurantStack } from './RestaurantStack';
+// Configs
+import { StacksConfig } from '../utils';
+// Componentes
 import { FavoritesScreen } from '../screens/FavoritesScreen';
 import { RankingScreen } from '../screens/RankingScreen';
 import { SearchScreen } from '../screens/SearchScreen';
 import { AccountScreen } from '../screens/AccountScreen';
-
-import { AddRestaurant } from "../screens/Restaurants/AddRestaurantScreen";
 
 const Tab = createBottomTabNavigator();
 
 export function AppNavigation(){
     return(
         <Tab.Navigator screenOptions={({route}) => ({
+            headerShown: false,
             tabBarActiveTintColor: '#00A680',
             tabBarInactiveTintColor: '#646464',
             tabBarIcon: ({color, size}) => screenOptions(route, color, size)
         })}>
-            <Tab.Screen name={ScreenConfig.restaurant.tab} component={RestaurantsScreen} options={{
-                title: ScreenConfig.restaurant.title
+            <Tab.Screen name={StacksConfig.restaurant.tab} component={RestaurantStack} options={{
+                title: StacksConfig.restaurant.title
             }} />
-            <Tab.Screen name={ScreenConfig.favorites.tab} component={FavoritesScreen} options={{
-                title: ScreenConfig.favorites.title
+            <Tab.Screen name={StacksConfig.favorites.tab} component={FavoritesScreen} options={{
+                title: StacksConfig.favorites.title
             }}/>
-            <Tab.Screen name={ScreenConfig.ranking.tab} component={RankingScreen} options={{
-                title: ScreenConfig.ranking.title
+            <Tab.Screen name={StacksConfig.ranking.tab} component={RankingScreen} options={{
+                title: StacksConfig.ranking.title
             }}/>
-            <Tab.Screen name={ScreenConfig.search.tab} component={SearchScreen} options={{
-                title: ScreenConfig.search.title
+            <Tab.Screen name={StacksConfig.search.tab} component={SearchScreen} options={{
+                title: StacksConfig.search.title
             }}/>
-            <Tab.Screen name={ScreenConfig.account.tab} component={AccountScreen} options={{
-                title: ScreenConfig.account.title
+            <Tab.Screen name={StacksConfig.account.tab} component={AccountScreen} options={{
+                title: StacksConfig.account.title
             }}/>
         </Tab.Navigator>
     );
@@ -40,19 +43,19 @@ export function AppNavigation(){
 function screenOptions(route, color, size){
     let iconName;
     switch(route.name){
-        case ScreenConfig.restaurant.tab:
+        case StacksConfig.restaurant.tab:
             iconName = 'compass-outline';
             break;
-        case ScreenConfig.favorites.tab:
+        case StacksConfig.favorites.tab:
             iconName = 'heart-outline';
             break;
-        case ScreenConfig.ranking.tab:
+        case StacksConfig.ranking.tab:
             iconName = 'star-outline';
             break;
-        case ScreenConfig.search.tab:
+        case StacksConfig.search.tab:
             iconName = 'magnify';
             break;
-        case ScreenConfig.account.tab:
+        case StacksConfig.account.tab:
             iconName = 'account';
             break;
     }

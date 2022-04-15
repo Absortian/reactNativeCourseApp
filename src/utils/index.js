@@ -1,1 +1,1 @@
-export * from "./ScreenConfig";
+export * from "./StacksConfig";

@@ -1,35 +1,39 @@
 // Restaurants
 const restaurantsStack = {
-    tab: 'Restaurants',
+    tab: 'RestaurantsTab',
     title: 'Restaurantes',
     screens: {
+        restaurants: {
+            tab: 'Restaurants',
+            title: 'Restaurantes',
+        },
         addRestaurant: {
             tab: 'AddRestaurant',
-            title: 'Agregar Restaurante',
+            title: 'Nuevo Restaurante',
         }
     }
 }
 // Favorites
 const favoritesStack = {
-    tab: 'Favorites',
+    tab: 'FavoritesTab',
     title: 'Favoritos',
 }
 // Ranking
 const rankingStack = {
-    tab: 'Ranking',
+    tab: 'RankingTab',
     title: 'Ranking',
 }
 // Search
 const searchStack = {
-    tab: 'Search',
+    tab: 'SearchTab',
     title: 'Buscar',
 }
 // Account
 const accountStack = {
-    tab: 'Account',
+    tab: 'AccountTab',
     title: 'Cuenta',
 }
-export const ScreenConfig = {
+export const StacksConfig = {
     // Restaurants
     restaurant: restaurantsStack,
     // Favorites

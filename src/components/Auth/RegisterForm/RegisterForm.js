@@ -3,17 +3,27 @@ import { View } from 'react-native';
 import { Button, Icon, Input } from 'react-native-elements';
 import { Styles } from './RegisterForm.styles';
 import { useFormik } from "formik";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { useNavigation } from "@react-navigation/native";
 import { initialValues, validationSchema } from './RegisterForm.data';
 
 export function RegisterForm(){
+
+    const navigation = useNavigation();
 
     const [showPassword, setShowPassword] = useState(false);
 
     const formik = useFormik({
         initialValues: initialValues(),
         validationSchema: validationSchema(),
-        onSubmit: formValue => {
-            console.log(formValue);
+        onSubmit: async formValue => {
+            try {
+                const auth = getAuth();
+                await createUserWithEmailAndPassword(auth, formValue.email, formValue.password);
+                navigation.goBack();
+            } catch (error) {
+                console.log(error);
+            }
         }
     });
 

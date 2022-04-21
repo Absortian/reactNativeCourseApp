@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 export function SearchStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name={StacksConfig.search.tab} component={SearchScreen} options={{title: StacksConfig.search.title}} />
+            <Stack.Screen name={StacksConfig.search.screens.search.tab} component={SearchScreen} options={{title: StacksConfig.search.screens.search.title}} />
         </Stack.Navigator>
     );
 }

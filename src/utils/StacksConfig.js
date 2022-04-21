@@ -27,6 +27,12 @@ const rankingStack = {
 const searchStack = {
     tab: 'SearchTab',
     title: 'Buscar',
+    screens: {
+        search: {
+            tab: 'Search',
+            title: 'Buscar',
+        }
+    }
 }
 // Account
 const accountStack = {
@@ -40,6 +46,10 @@ const accountStack = {
         login: {
             tab: 'LoginScreen',
             title: 'Iniciar Sesión',
+        },
+        register: {
+            tab: 'RegisterScreen',
+            title: 'Registrarse',
         },
     }
 }

@@ -5,7 +5,9 @@ import { Styles } from './RegisterForm.styles';
 import { useFormik } from "formik";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 import { useNavigation } from "@react-navigation/native";
+import { StacksConfig } from "../../../utils";
 import { initialValues, validationSchema } from './RegisterForm.data';
+import Toast from 'react-native-toast-message';
 
 export function RegisterForm(){
 
@@ -20,9 +22,14 @@ export function RegisterForm(){
             try {
                 const auth = getAuth();
                 await createUserWithEmailAndPassword(auth, formValue.email, formValue.password);
-                navigation.goBack();
+                navigation.navigate(StacksConfig.account.tab, { screen: StacksConfig.account.screens.accountBase.tab });
             } catch (error) {
-                console.log(error);
+                Toast.show({
+                    type: 'error',
+                    position: 'bottom',
+                    text1: 'Error al crear el usuario.'
+                });
+                //console.log(error);
             }
         }
     });
